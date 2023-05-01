@@ -1,8 +1,12 @@
-print('a:', ord('a'))
-print('z:', ord('z'))
-print('A:', ord('A'))
-print('Z:', ord('Z'))
+n = int(input('Enter the key: '))
+s = str(input('What do you wanna encode? '))
+l = [] 
 
-print(ord('a')+2)
+for i in s:
+    if i.isupper() == True:
+        l.append(chr(((ord(i))-64 + n) % 26 + 64))
+    else:
+        l.append(chr(((ord(i))-96 + n) % 26 + 96))
 
-print(chr((ord('a') - 96 +2) % 26 + 96))
+ns = ''.join(l)
+print(ns)
